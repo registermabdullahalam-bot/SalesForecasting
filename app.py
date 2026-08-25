@@ -51,10 +51,10 @@ st.sidebar.title("Navigation")
 page = st.sidebar.radio(
     "Go to",
     [
-        "🏠 Sales Overview",
-        "📈 Forecast Explorer",
-        "🚨 Anomaly Report",
-        "📦 Product Segments"
+        " Sales Overview",
+        " Forecast Explorer",
+        " Anomaly Report",
+        " Product Segments"
     ]
 )
 
@@ -91,19 +91,19 @@ col1, col2, col3, col4 = st.columns(4)
 
 with col1:
     st.metric(
-        "💰 Total Sales",
+        " Total Sales",
         f"${total_sales:,.0f}"
     )
 
 with col2:
     st.metric(
-        "📦 Orders",
+        " Orders",
         f"{total_orders:,}"
     )
 
 with col3:
     st.metric(
-        "🚚 Avg Shipping",
+        " Avg Shipping",
         f"{avg_shipping:.1f} Days"
     )
 
@@ -113,11 +113,11 @@ with col4:
         categories
     )
     
-if page == "🏠 Sales Overview":
+if page == " Sales Overview":
 
     st.header("Sales Overview")
 
-    with st.expander("📄 View Dataset"):
+    with st.expander(" View Dataset"):
 
         st.dataframe(
         df.head(20),
@@ -200,7 +200,7 @@ if page == "🏠 Sales Overview":
     
 elif page == "📈 Forecast Explorer":
 
-    st.header("📈 Forecast Explorer")
+    st.header(" Forecast Explorer")
 
     st.write("### Model Performance")
 
@@ -223,7 +223,7 @@ elif page == "📈 Forecast Explorer":
     best_model = metrics.loc[metrics["RMSE"].idxmin()]
 
     st.success(
-        f"🏆 Best Model: {best_model['Model']} (RMSE = {best_model['RMSE']:.2f})"
+        f" Best Model: {best_model['Model']} (RMSE = {best_model['RMSE']:.2f})"
     )
 
     st.image(
@@ -232,9 +232,9 @@ elif page == "📈 Forecast Explorer":
         width="stretch"     
     )
 
-elif page == "🚨 Anomaly Report":
+elif page == " Anomaly Report":
 
-    st.header("🚨 Anomaly Detection Report")
+    st.header(" Anomaly Detection Report")
 
     st.markdown("""
     This section highlights unusual sales patterns detected using two different techniques:
@@ -269,9 +269,9 @@ elif page == "🚨 Anomaly Report":
     """)
     
     
-elif page == "📦 Product Segments":
+elif page == " Product Segments":
 
-    st.header("📦 Product Demand Segmentation")
+    st.header(" Product Demand Segmentation")
 
     st.markdown("""
     Products were grouped using **K-Means Clustering** based on:
